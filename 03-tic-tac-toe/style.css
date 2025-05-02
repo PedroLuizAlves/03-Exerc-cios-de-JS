@@ -1,0 +1,29 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#gameBoard {
+    background-color: #232323;
+    display: grid; /* Para formatar no formato de 'grades' usamos a 'grid' */
+    grid-template-columns: 6rem 6rem 6rem;
+    grid-template-rows: 6rem 6rem 6rem;
+    gap: .5rem;
+    margin-bottom: 1.5rem;
+    max-width: 19rem;
+}
+
+#gameBoard span {
+    background-color: #ddd;
+    /* Uma tecnica para centralizar objetos dentro de uma grid: */
+    display: grid;
+    place-content: center;
+    font-size: 5rem;
+}
+
+.cursor-pointer { /*Separamos o estilo do cursor pois no codigo JS alteramos os estilos ao selecionar uma região de forma inline, então para evitar bugs, isolamos o estilo, adicionamos em todos os spans no html e simplesmente removemos a classe de estilo no JS*/
+    cursor: pointer;
+}
+
+#gameBoard span.win {
+    background-color: #25a340;
+}
